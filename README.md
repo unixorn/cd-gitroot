@@ -1,15 +1,15 @@
 # cd-gitroot
 
 ## Synopsis
-zsh plugin to change directory to git repository root directory
+cd-gitroot is a zsh plugin to change directory to a git repository's root directory
 
 Inspired by [id:hitode909 blog post](http://hitode909.hatenablog.com/entry/20100211/1265879271).
 
 ## How to set up
 
-### Manually install
+### Manual install
 
-Put cd-gitroot and _cd-gitroot files somewhere in your $fpath and add the following line to your .zshrc:
+Put cd-gitroot and _cd-gitroot files somewhere in your `$fpath` and add the following line to your `.zshrc`:
 
 ```
 autoload -Uz cd-gitroot
@@ -23,7 +23,7 @@ autoload -Uz cd-gitroot
 % git clone https://github.com/mollifier/cd-gitroot.git
 ```
 
-And add the following lines to your .zshrc:
+Add the following lines to your `.zshrc`:
 
 ```
 fpath=(/path/to/dir/cd-gitroot(N-/) $fpath)
@@ -32,10 +32,17 @@ autoload -Uz cd-gitroot
 ```
 
 ### Installing using Antigen
-If you use [Antigen](https://github.com/zsh-users/antigen), add the following line to your .zshrc:
+If you use the [Antigen](https://github.com/zsh-users/antigen) framework, add the following line to your .zshrc:
 
 ```
 antigen bundle mollifier/cd-gitroot
+```
+
+### Installing with Zgen
+If you're using [Zgen](https://github.com/tarjoilija/zgen) framework, add the following line to your `.zshrc` with your other plugins:
+
+```
+zgen load mollifier/cd-gitroot
 ```
 
 You can set alias to this function.
@@ -51,9 +58,9 @@ alias cdu='cd-gitroot'
 cd-gitroot [PATH]
 ```
 
-If PATH isn't specified, change directory to current git repository root directory.
-else change directory to PATH instead of it.
-PATH is treated relative path in git root directory.
+If **PATH** isn't specified, change directory to the current git repository's root directory,
+otherwise change directory to **PATH** inside of it.
+**PATH** is treated as a path relative to the git root directory.
 
 ## Options
 \-h display help and exit
